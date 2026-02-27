@@ -6,6 +6,9 @@ module.exports = sequelize.define('User', {
   ageGroup: DataTypes.STRING,
   goal: DataTypes.STRING,
   level: DataTypes.STRING,
-  trialPaid: { type: DataTypes.BOOLEAN, defaultValue: false },
-  notifySlots: { type: DataTypes.BOOLEAN, defaultValue: true }
+  notifySlots: { type: DataTypes.BOOLEAN, defaultValue: true },
+  trialBooked: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  }
 })
