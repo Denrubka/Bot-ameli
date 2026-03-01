@@ -1,11 +1,20 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../database')
 
-module.exports = sequelize.define('User', {
-  telegramId: { type: DataTypes.BIGINT, unique: true },
+const User = sequelize.define('User', {
+  telegramId: {
+    type: DataTypes.STRING,
+    unique: true
+  },
+  username: DataTypes.STRING,
+  firstName: DataTypes.STRING,
   ageGroup: DataTypes.STRING,
   goal: DataTypes.STRING,
   level: DataTypes.STRING,
-  trialPaid: { type: DataTypes.BOOLEAN, defaultValue: false },
-  notifySlots: { type: DataTypes.BOOLEAN, defaultValue: true }
+  trialBooked: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  }
 })
+
+module.exports = User
